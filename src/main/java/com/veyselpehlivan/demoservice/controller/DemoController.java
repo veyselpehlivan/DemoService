@@ -26,17 +26,8 @@ public class DemoController {
     @Autowired
     PhotoRepository photoRepository;
 
-
-
-
-
-
     @GetMapping(value = "/allUsers")
     public List<User> getAll() {
-
-
-
-
         return userRepository.findAll();
     }
 
@@ -64,8 +55,6 @@ public class DemoController {
     @PutMapping(value="/userAlbums/{id}")
     @ResponseBody
     public List<Album> filterById(@PathVariable("id") Long id){
-
-
         return albumRepository.findAlbumByUserId(id);
     }
 
@@ -74,7 +63,6 @@ public class DemoController {
     @PutMapping(value="/userAlbumsWithDetails/{id}")
     @ResponseBody
     public List<Photo> userAlbumsWithDetails(@PathVariable("id") Long id){
-
         return photoRepository.albumPhotoJoin(id);
     }
 
